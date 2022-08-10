@@ -28,38 +28,130 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.helloworld = new System.Windows.Forms.Button();
-            this.textbox = new System.Windows.Forms.TextBox();
+            this.one = new System.Windows.Forms.Button();
+            this.two = new System.Windows.Forms.Button();
+            this.three = new System.Windows.Forms.Button();
+            this.four = new System.Windows.Forms.Button();
+            this.five = new System.Windows.Forms.Button();
+            this.six = new System.Windows.Forms.Button();
+            this.seven = new System.Windows.Forms.Button();
+            this.eight = new System.Windows.Forms.Button();
+            this.nine = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // helloworld
+            // one
             // 
-            this.helloworld.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.helloworld.Location = new System.Drawing.Point(369, 116);
-            this.helloworld.Name = "helloworld";
-            this.helloworld.Size = new System.Drawing.Size(75, 23);
-            this.helloworld.TabIndex = 0;
-            this.helloworld.Text = "button1";
-            this.helloworld.UseVisualStyleBackColor = true;
-            this.helloworld.Click += new System.EventHandler(this.clickme_Click);
+            this.one.Location = new System.Drawing.Point(25, 92);
+            this.one.Name = "one";
+            this.one.Size = new System.Drawing.Size(75, 23);
+            this.one.TabIndex = 0;
+            this.one.Text = "1";
+            this.one.UseVisualStyleBackColor = true;
+            this.one.Click += new System.EventHandler(this.one_Click);
             // 
-            // textbox
+            // two
             // 
-            this.textbox.Location = new System.Drawing.Point(359, 145);
-            this.textbox.Name = "textbox";
-            this.textbox.Size = new System.Drawing.Size(100, 23);
-            this.textbox.TabIndex = 1;
-            this.textbox.TextChanged += new System.EventHandler(this.textbox_TextChanged);
+            this.two.Location = new System.Drawing.Point(106, 92);
+            this.two.Name = "two";
+            this.two.Size = new System.Drawing.Size(75, 23);
+            this.two.TabIndex = 1;
+            this.two.Text = "2";
+            this.two.UseVisualStyleBackColor = true;
+            this.two.Click += new System.EventHandler(this.two_Click);
+            // 
+            // three
+            // 
+            this.three.Location = new System.Drawing.Point(187, 92);
+            this.three.Name = "three";
+            this.three.Size = new System.Drawing.Size(75, 23);
+            this.three.TabIndex = 2;
+            this.three.Text = "3";
+            this.three.UseVisualStyleBackColor = true;
+            this.three.Click += new System.EventHandler(this.three_Click);
+            // 
+            // four
+            // 
+            this.four.Location = new System.Drawing.Point(25, 121);
+            this.four.Name = "four";
+            this.four.Size = new System.Drawing.Size(75, 23);
+            this.four.TabIndex = 3;
+            this.four.Text = "4";
+            this.four.UseVisualStyleBackColor = true;
+            this.four.Click += new System.EventHandler(this.four_Click);
+            // 
+            // five
+            // 
+            this.five.Location = new System.Drawing.Point(106, 122);
+            this.five.Name = "five";
+            this.five.Size = new System.Drawing.Size(75, 23);
+            this.five.TabIndex = 4;
+            this.five.Text = "5";
+            this.five.UseVisualStyleBackColor = true;
+            this.five.Click += new System.EventHandler(this.five_Click);
+            // 
+            // six
+            // 
+            this.six.Location = new System.Drawing.Point(187, 121);
+            this.six.Name = "six";
+            this.six.Size = new System.Drawing.Size(75, 23);
+            this.six.TabIndex = 5;
+            this.six.Text = "6";
+            this.six.UseVisualStyleBackColor = true;
+            this.six.Click += new System.EventHandler(this.six_Click);
+            // 
+            // seven
+            // 
+            this.seven.Location = new System.Drawing.Point(25, 150);
+            this.seven.Name = "seven";
+            this.seven.Size = new System.Drawing.Size(75, 23);
+            this.seven.TabIndex = 6;
+            this.seven.Text = "7";
+            this.seven.UseVisualStyleBackColor = true;
+            this.seven.Click += new System.EventHandler(this.seven_Click);
+            // 
+            // eight
+            // 
+            this.eight.Location = new System.Drawing.Point(106, 151);
+            this.eight.Name = "eight";
+            this.eight.Size = new System.Drawing.Size(75, 23);
+            this.eight.TabIndex = 7;
+            this.eight.Text = "8";
+            this.eight.UseVisualStyleBackColor = true;
+            this.eight.Click += new System.EventHandler(this.eight_Click);
+            // 
+            // nine
+            // 
+            this.nine.Location = new System.Drawing.Point(187, 151);
+            this.nine.Name = "nine";
+            this.nine.Size = new System.Drawing.Size(75, 23);
+            this.nine.TabIndex = 8;
+            this.nine.Text = "9";
+            this.nine.UseVisualStyleBackColor = true;
+            this.nine.Click += new System.EventHandler(this.nine_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(25, 63);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(237, 23);
+            this.textBox1.TabIndex = 9;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textbox);
-            this.Controls.Add(this.helloworld);
+            this.ClientSize = new System.Drawing.Size(289, 261);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.nine);
+            this.Controls.Add(this.eight);
+            this.Controls.Add(this.seven);
+            this.Controls.Add(this.six);
+            this.Controls.Add(this.five);
+            this.Controls.Add(this.four);
+            this.Controls.Add(this.three);
+            this.Controls.Add(this.two);
+            this.Controls.Add(this.one);
             this.Name = "Form1";
-            this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -67,7 +159,15 @@
 
         #endregion
 
-        private Button helloworld;
-        private TextBox textbox;
+        private Button one;
+        private Button two;
+        private Button three;
+        private Button four;
+        private Button five;
+        private Button six;
+        private Button seven;
+        private Button eight;
+        private Button nine;
+        private TextBox textBox1;
     }
 }
