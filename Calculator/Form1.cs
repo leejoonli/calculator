@@ -66,5 +66,23 @@ namespace Calculator
             input += "9";
             this.textBox1.Text = input;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            input = String.Empty;
+            this.textBox1.Text = input;
+        }
+
+        private void zero_Click(object sender, EventArgs e)
+        {
+            input += "0";
+            this.textBox1.Text = input;
+        }
+
+        private void dot_Click(object sender, EventArgs e)
+        {
+            input += ".";
+            this.textBox1.Text = input;
+        }
     }
 }

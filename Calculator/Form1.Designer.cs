@@ -38,6 +38,9 @@
             this.eight = new System.Windows.Forms.Button();
             this.nine = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.zero = new System.Windows.Forms.Button();
+            this.clear = new System.Windows.Forms.Button();
+            this.dot = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // one
@@ -138,9 +141,42 @@
             this.textBox1.TabIndex = 9;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
+            // zero
+            // 
+            this.zero.Location = new System.Drawing.Point(25, 179);
+            this.zero.Name = "zero";
+            this.zero.Size = new System.Drawing.Size(75, 23);
+            this.zero.TabIndex = 10;
+            this.zero.Text = "0";
+            this.zero.UseVisualStyleBackColor = true;
+            this.zero.Click += new System.EventHandler(this.zero_Click);
+            // 
+            // clear
+            // 
+            this.clear.Location = new System.Drawing.Point(187, 179);
+            this.clear.Name = "clear";
+            this.clear.Size = new System.Drawing.Size(75, 23);
+            this.clear.TabIndex = 11;
+            this.clear.Text = "C";
+            this.clear.UseVisualStyleBackColor = true;
+            this.clear.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // dot
+            // 
+            this.dot.Location = new System.Drawing.Point(106, 179);
+            this.dot.Name = "dot";
+            this.dot.Size = new System.Drawing.Size(75, 23);
+            this.dot.TabIndex = 12;
+            this.dot.Text = ".";
+            this.dot.UseVisualStyleBackColor = true;
+            this.dot.Click += new System.EventHandler(this.dot_Click);
+            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(289, 261);
+            this.Controls.Add(this.dot);
+            this.Controls.Add(this.clear);
+            this.Controls.Add(this.zero);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.nine);
             this.Controls.Add(this.eight);
@@ -169,5 +205,8 @@
         private Button eight;
         private Button nine;
         private TextBox textBox1;
+        private Button zero;
+        private Button clear;
+        private Button dot;
     }
 }
