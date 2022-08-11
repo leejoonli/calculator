@@ -3,6 +3,11 @@ namespace Calculator
     public partial class Form1 : Form
     {
         string input = string.Empty;
+        string operand_one = string.Empty;
+        string operand_two = string.Empty;
+        char operation;
+        //double result;
+
         public Form1()
         {
             InitializeComponent();
@@ -15,8 +20,21 @@ namespace Calculator
 
         private void one_Click(object sender, EventArgs e)
         {
-            input += "1";
-            this.textBox1.Text = input;
+            if (operation != '+' || operation != '-' || operation != '*' || operation != '/') 
+            {
+                this.textBox1.Text = "";
+                operand_one += "1";
+                input = operand_one;
+                this.textBox1.Text = input;
+            }
+            else
+            {
+                this.textBox1.Text = "";
+                operand_two += "1";
+                input = $"{operand_one}{operation}{operand_two}";
+                input = operand_two;
+                this.textBox1.Text = input;
+            }
         }
 
         private void two_Click(object sender, EventArgs e)
@@ -69,7 +87,10 @@ namespace Calculator
 
         private void button2_Click(object sender, EventArgs e)
         {
-            input = String.Empty;
+            input = string.Empty;
+            operand_one = string.Empty;
+            operand_two = string.Empty;
+            operation = ' ';
             this.textBox1.Text = input;
         }
 
@@ -83,6 +104,39 @@ namespace Calculator
         {
             input += ".";
             this.textBox1.Text = input;
+        }
+
+
+        private void add_Click(object sender, EventArgs e)
+        {
+            operation = '+';
+            input = $"{operand_one}{operation}{operand_two}";
+            this.textBox1.Text = input;
+        }
+
+        private void subtract_Click(object sender, EventArgs e)
+        {
+            operation = '-';
+            input += "-";
+            this.textBox1.Text = input;
+        }
+
+        private void multiply_Click(object sender, EventArgs e)
+        {
+            operation = '*';
+            input += "*";
+            this.textBox1.Text = input;
+        }
+
+        private void divide_Click(object sender, EventArgs e)
+        {
+            operation = '/';
+            input += "/";
+            this.textBox1.Text = input;
+        }
+        private void execute_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

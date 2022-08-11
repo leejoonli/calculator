@@ -41,6 +41,11 @@
             this.zero = new System.Windows.Forms.Button();
             this.clear = new System.Windows.Forms.Button();
             this.dot = new System.Windows.Forms.Button();
+            this.add = new System.Windows.Forms.Button();
+            this.subtract = new System.Windows.Forms.Button();
+            this.multiply = new System.Windows.Forms.Button();
+            this.divide = new System.Windows.Forms.Button();
+            this.execute = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // one
@@ -171,9 +176,64 @@
             this.dot.UseVisualStyleBackColor = true;
             this.dot.Click += new System.EventHandler(this.dot_Click);
             // 
+            // add
+            // 
+            this.add.Location = new System.Drawing.Point(268, 92);
+            this.add.Name = "add";
+            this.add.Size = new System.Drawing.Size(75, 23);
+            this.add.TabIndex = 13;
+            this.add.Text = "+";
+            this.add.UseVisualStyleBackColor = true;
+            this.add.Click += new System.EventHandler(this.add_Click);
+            // 
+            // subtract
+            // 
+            this.subtract.Location = new System.Drawing.Point(268, 121);
+            this.subtract.Name = "subtract";
+            this.subtract.Size = new System.Drawing.Size(75, 23);
+            this.subtract.TabIndex = 14;
+            this.subtract.Text = "-";
+            this.subtract.UseVisualStyleBackColor = true;
+            this.subtract.Click += new System.EventHandler(this.subtract_Click);
+            // 
+            // multiply
+            // 
+            this.multiply.Location = new System.Drawing.Point(268, 150);
+            this.multiply.Name = "multiply";
+            this.multiply.Size = new System.Drawing.Size(75, 23);
+            this.multiply.TabIndex = 15;
+            this.multiply.Text = "*";
+            this.multiply.UseVisualStyleBackColor = true;
+            this.multiply.Click += new System.EventHandler(this.multiply_Click);
+            // 
+            // divide
+            // 
+            this.divide.Location = new System.Drawing.Point(268, 179);
+            this.divide.Name = "divide";
+            this.divide.Size = new System.Drawing.Size(75, 23);
+            this.divide.TabIndex = 16;
+            this.divide.Text = "/";
+            this.divide.UseVisualStyleBackColor = true;
+            this.divide.Click += new System.EventHandler(this.divide_Click);
+            // 
+            // execute
+            // 
+            this.execute.Location = new System.Drawing.Point(268, 62);
+            this.execute.Name = "execute";
+            this.execute.Size = new System.Drawing.Size(75, 23);
+            this.execute.TabIndex = 17;
+            this.execute.Text = "=";
+            this.execute.UseVisualStyleBackColor = true;
+            this.execute.Click += new System.EventHandler(this.execute_Click);
+            // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(289, 261);
+            this.ClientSize = new System.Drawing.Size(382, 248);
+            this.Controls.Add(this.execute);
+            this.Controls.Add(this.divide);
+            this.Controls.Add(this.multiply);
+            this.Controls.Add(this.subtract);
+            this.Controls.Add(this.add);
             this.Controls.Add(this.dot);
             this.Controls.Add(this.clear);
             this.Controls.Add(this.zero);
@@ -208,5 +268,10 @@
         private Button zero;
         private Button clear;
         private Button dot;
+        private Button add;
+        private Button subtract;
+        private Button multiply;
+        private Button divide;
+        private Button execute;
     }
 }
