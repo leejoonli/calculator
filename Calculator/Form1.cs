@@ -18,7 +18,7 @@ namespace Calculator
 
         }
 
-        private void testing(object sender)
+        private void input_string(object sender)
         {
             Button temp = sender as Button;
             if (operation == '+' || operation == '-' || operation == '*' || operation == '/')
@@ -39,47 +39,47 @@ namespace Calculator
 
         private void one_Click(object sender, EventArgs e)
         {
-            testing(sender);
+            input_string(sender);
         }
 
         private void two_Click(object sender, EventArgs e)
         {
-            testing(sender);
+            input_string(sender);
         }
 
         private void three_Click(object sender, EventArgs e)
         {
-            testing(sender);
+            input_string(sender);
         }
 
         private void four_Click(object sender, EventArgs e)
         {
-            testing(sender);
+            input_string(sender);
         }
 
         private void five_Click(object sender, EventArgs e)
         {
-            testing(sender);
+            input_string(sender);
         }
 
         private void six_Click(object sender, EventArgs e)
         {
-            testing(sender);
+            input_string(sender);
         }
 
         private void seven_Click(object sender, EventArgs e)
         {
-            testing(sender);
+            input_string(sender);
         }
 
         private void eight_Click(object sender, EventArgs e)
         {
-            testing(sender);
+            input_string(sender);
         }
 
         private void nine_Click(object sender, EventArgs e)
         {
-            testing(sender);
+            input_string(sender);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -88,13 +88,12 @@ namespace Calculator
             operand_one = string.Empty;
             operand_two = string.Empty;
             operation = ' ';
-            //Array.Clear(operands);
             this.textBox1.Text = input;
         }
 
         private void zero_Click(object sender, EventArgs e)
         {
-            testing(sender);
+            input_string(sender);
         }
 
         private void dot_Click(object sender, EventArgs e)
