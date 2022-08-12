@@ -26,15 +26,15 @@ namespace Calculator
                 //operands.Append(operand_temp);
                 this.textBox1.Text = "";
                 operand_two += "1";
-                //input += "hello world";
-                this.textBox1.Text = operand_two;
+                input += "1";
+                this.textBox1.Text = input;
             }
             else
             {
                 this.textBox1.Text = "";
                 operand_one += "1";
                 input += "1";
-                this.textBox1.Text = input;
+                this.textBox1.Text = operand_one;
             }
         }
 
@@ -159,8 +159,6 @@ namespace Calculator
             this.textBox1.Text = "";
             input += result.ToString();
             this.textBox1.Text = input;
-
-
         }
     }
 }
