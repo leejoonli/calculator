@@ -26,12 +26,16 @@ namespace Calculator
                 //operands.Append(operand_temp);
                 this.textBox1.Text = "";
                 operand_two += "1";
+                //input += "hello world";
                 this.textBox1.Text = operand_two;
             }
-            this.textBox1.Text = "";
-            operand_one += "1";
-            input += "1";
-            this.textBox1.Text = input;
+            else
+            {
+                this.textBox1.Text = "";
+                operand_one += "1";
+                input += "1";
+                this.textBox1.Text = input;
+            }
         }
 
         private void two_Click(object sender, EventArgs e)
@@ -147,7 +151,7 @@ namespace Calculator
                     break;
             }
 
-            operand_one = string.Empty;
+            operand_one = result.ToString();
             operand_two = string.Empty;
             input = string.Empty;
             operation = ' ';
@@ -155,6 +159,8 @@ namespace Calculator
             this.textBox1.Text = "";
             input += result.ToString();
             this.textBox1.Text = input;
+
+
         }
     }
 }
