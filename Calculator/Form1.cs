@@ -4,10 +4,9 @@ namespace Calculator
     {
         string input = string.Empty;
         string operand_one = string.Empty;
-        //string[] operands = new string[2];
         string operand_two = string.Empty;
         char operation;
-        //double result;
+        double result;
 
         public Form1()
         {
@@ -23,7 +22,6 @@ namespace Calculator
         {
             if (operation == '+')
             {
-                //operands.Append(operand_temp);
                 this.textBox1.Text = "";
                 operand_two += "1";
                 input += "1";
@@ -138,7 +136,7 @@ namespace Calculator
         }
         private void execute_Click(object sender, EventArgs e)
         {
-            double result = 0;
+            result = 0;
             double num_one = Convert.ToDouble(operand_one);
             double num_two = Convert.ToDouble(operand_two);
 
