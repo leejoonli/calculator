@@ -4,6 +4,7 @@ namespace Calculator
     {
         string input = string.Empty;
         string operand_one = string.Empty;
+        //string[] operands = new string[2];
         string operand_two = string.Empty;
         char operation;
         //double result;
@@ -20,21 +21,17 @@ namespace Calculator
 
         private void one_Click(object sender, EventArgs e)
         {
-            if (operation != '+' || operation != '-' || operation != '*' || operation != '/') 
+            if (operation == '+')
             {
-                this.textBox1.Text = "";
-                operand_one += "1";
-                input = operand_one;
-                this.textBox1.Text = input;
-            }
-            else
-            {
+                //operands.Append(operand_temp);
                 this.textBox1.Text = "";
                 operand_two += "1";
-                input = $"{operand_one}{operation}{operand_two}";
-                input = operand_two;
-                this.textBox1.Text = input;
+                this.textBox1.Text = operand_two;
             }
+            this.textBox1.Text = "";
+            operand_one += "1";
+            input += "1";
+            this.textBox1.Text = input;
         }
 
         private void two_Click(object sender, EventArgs e)
@@ -91,6 +88,7 @@ namespace Calculator
             operand_one = string.Empty;
             operand_two = string.Empty;
             operation = ' ';
+            //Array.Clear(operands);
             this.textBox1.Text = input;
         }
 
@@ -110,7 +108,7 @@ namespace Calculator
         private void add_Click(object sender, EventArgs e)
         {
             operation = '+';
-            input = $"{operand_one}{operation}{operand_two}";
+            input += "+";
             this.textBox1.Text = input;
         }
 
@@ -136,7 +134,27 @@ namespace Calculator
         }
         private void execute_Click(object sender, EventArgs e)
         {
+            double result = 0;
+            double num_one = Convert.ToDouble(operand_one);
+            double num_two = Convert.ToDouble(operand_two);
 
+            switch(operation)
+            {
+                case '+':
+                    result = num_one + num_two;
+                    break;
+                default:
+                    break;
+            }
+
+            operand_one = string.Empty;
+            operand_two = string.Empty;
+            input = string.Empty;
+            operation = ' ';
+
+            this.textBox1.Text = "";
+            input += result.ToString();
+            this.textBox1.Text = input;
         }
     }
 }
