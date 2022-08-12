@@ -20,7 +20,7 @@ namespace Calculator
 
         private void one_Click(object sender, EventArgs e)
         {
-            if (operation == '+')
+            if (operation == '+' || operation == '-' || operation == '*' || operation == '/')
             {
                 this.textBox1.Text = "";
                 operand_two += "1";
@@ -144,6 +144,15 @@ namespace Calculator
             {
                 case '+':
                     result = num_one + num_two;
+                    break;
+                case '-':
+                    result = num_one - num_two;
+                    break;
+                case '*':
+                    result = num_one * num_two;
+                    break;
+                case '/':
+                    result = num_one / num_two;
                     break;
                 default:
                     break;
