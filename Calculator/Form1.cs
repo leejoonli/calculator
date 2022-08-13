@@ -5,7 +5,7 @@ namespace Calculator
         string input = string.Empty;
         string operand_one = string.Empty;
         string operand_two = string.Empty;
-        char operation;
+        char operation = ' ';
         double result;
 
         public Form1()
@@ -105,6 +105,10 @@ namespace Calculator
 
         private void add_Click(object sender, EventArgs e)
         {
+            if (operation != ' ')
+            {
+                execute_Click(sender, e);
+            }
             operation = '+';
             input += "+";
             this.textBox1.Text = input;
@@ -112,6 +116,10 @@ namespace Calculator
 
         private void subtract_Click(object sender, EventArgs e)
         {
+            if (operation != ' ')
+            {
+                execute_Click(sender, e);
+            }
             operation = '-';
             input += "-";
             this.textBox1.Text = input;
@@ -119,6 +127,10 @@ namespace Calculator
 
         private void multiply_Click(object sender, EventArgs e)
         {
+            if (operation != ' ')
+            {
+                execute_Click(sender, e);
+            }
             operation = '*';
             input += "*";
             this.textBox1.Text = input;
@@ -126,6 +138,10 @@ namespace Calculator
 
         private void divide_Click(object sender, EventArgs e)
         {
+            if (operation != ' ')
+            {
+                execute_Click(sender, e);
+            }
             operation = '/';
             input += "/";
             this.textBox1.Text = input;
