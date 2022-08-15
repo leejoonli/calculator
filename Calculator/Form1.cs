@@ -109,6 +109,10 @@ namespace Calculator
             {
                 execute_Click(sender, e);
             }
+            if (operand_one == string.Empty)
+            {
+                operand_one = "0";
+            }
             operation = '+';
             input += "+";
             this.textBox1.Text = input;
@@ -119,6 +123,10 @@ namespace Calculator
             if (operation != ' ')
             {
                 execute_Click(sender, e);
+            }
+            if (operand_one == string.Empty)
+            {
+                operand_one = "0";
             }
             operation = '-';
             input += "-";
@@ -131,6 +139,10 @@ namespace Calculator
             {
                 execute_Click(sender, e);
             }
+            if (operand_one == string.Empty)
+            {
+                operand_one = "0";
+            }
             operation = '*';
             input += "*";
             this.textBox1.Text = input;
@@ -142,12 +154,24 @@ namespace Calculator
             {
                 execute_Click(sender, e);
             }
+            if (operand_one == string.Empty)
+            {
+                operand_one = "0";
+            }
             operation = '/';
             input += "/";
             this.textBox1.Text = input;
         }
         private void execute_Click(object sender, EventArgs e)
         {
+            if (operand_one == string.Empty && operand_two == string.Empty)
+            {
+                input = string.Empty;
+                this.textBox1.Text = "";
+                input += "0";
+                this.textBox1.Text = input;
+                return;
+            }
             result = 0;
             double num_one = Convert.ToDouble(operand_one);
             double num_two = Convert.ToDouble(operand_two);
