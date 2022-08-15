@@ -172,6 +172,19 @@ namespace Calculator
                 this.textBox1.Text = input;
                 return;
             }
+            if (operand_one != string.Empty && operation == ' ')
+            {
+                input = string.Empty;
+                this.textBox1.Text = "";
+                input += operand_one;
+                this.textBox1.Text = input;
+                return;
+            }
+            if (operand_one != string.Empty && operation != ' ')
+            {
+                string temp_operand_two = operand_one;
+                operand_two = temp_operand_two;
+            }
             result = 0;
             double num_one = Convert.ToDouble(operand_one);
             double num_two = Convert.ToDouble(operand_two);
