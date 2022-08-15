@@ -175,9 +175,18 @@ namespace Calculator
             input = string.Empty;
             operation = ' ';
 
-            this.textBox1.Text = "";
-            input += result.ToString();
-            this.textBox1.Text = input;
+            if(result == 0)
+            {
+                this.textBox1.Text = "";
+                input += "0";
+                this.textBox1.Text = input;
+            }
+            else
+            {
+                this.textBox1.Text = "";
+                input += result.ToString();
+                this.textBox1.Text = input;
+            }
         }
     }
 }
