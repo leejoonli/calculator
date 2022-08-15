@@ -7,7 +7,7 @@ namespace Calculator
         string operand_two = string.Empty;
         char operation = ' ';
         double result;
-        bool test = false;
+        bool has_executed = false;
 
         public Form1()
         {
@@ -31,7 +31,7 @@ namespace Calculator
             }
             else
             {
-                if (test)
+                if (has_executed)
                 {
                     operand_one = string.Empty;
                     input = string.Empty;
@@ -39,7 +39,7 @@ namespace Calculator
                     operand_one += temp.Text;
                     input += temp.Text;
                     this.textBox1.Text = input;
-                    test = false;
+                    has_executed = false;
                 }
                 else
                 {
@@ -200,7 +200,7 @@ namespace Calculator
                 operand_two = temp_operand_two;
             }
 
-            test = true;
+            has_executed = true;
             result = 0;
             double num_one = Convert.ToDouble(operand_one);
             double num_two = Convert.ToDouble(operand_two);
