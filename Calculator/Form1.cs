@@ -7,6 +7,7 @@ namespace Calculator
         string operand_two = string.Empty;
         char operation = ' ';
         double result;
+        bool test = false;
 
         public Form1()
         {
@@ -30,10 +31,23 @@ namespace Calculator
             }
             else
             {
-                this.textBox1.Text = "";
-                operand_one += temp.Text;
-                input += temp.Text;
-                this.textBox1.Text = input;
+                if (test)
+                {
+                    operand_one = string.Empty;
+                    input = string.Empty;
+                    this.textBox1.Text = "";
+                    operand_one += temp.Text;
+                    input += temp.Text;
+                    this.textBox1.Text = input;
+                    test = false;
+                }
+                else
+                {
+                    this.textBox1.Text = "";
+                    operand_one += temp.Text;
+                    input += temp.Text;
+                    this.textBox1.Text = input;
+                }
             }
         }
 
@@ -172,7 +186,7 @@ namespace Calculator
                 this.textBox1.Text = input;
                 return;
             }
-            if (operand_one != string.Empty && operation == ' ')
+            if (operand_one != string.Empty && operation == ' ' && operand_two == string.Empty)
             {
                 input = string.Empty;
                 this.textBox1.Text = "";
@@ -180,11 +194,13 @@ namespace Calculator
                 this.textBox1.Text = input;
                 return;
             }
-            if (operand_one != string.Empty && operation != ' ')
+            if (operand_one != string.Empty && operation != ' ' && operand_two == string.Empty)
             {
                 string temp_operand_two = operand_one;
                 operand_two = temp_operand_two;
             }
+
+            test = true;
             result = 0;
             double num_one = Convert.ToDouble(operand_one);
             double num_two = Convert.ToDouble(operand_two);
