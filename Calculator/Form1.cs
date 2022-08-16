@@ -112,10 +112,21 @@ namespace Calculator
 
         private void dot_Click(object sender, EventArgs e)
         {
-            input += ".";
-            this.textBox1.Text = input;
+            if (!operand_one.Contains('.'))
+            {
+                this.textBox1.Text = "";
+                operand_one += '.';
+                input += ".";
+                this.textBox1.Text = input;
+            }
+            else if (!operand_two.Contains('.') && operation != ' ')
+            {
+                this.textBox1.Text = "";
+                operand_two += '.';
+                input += ".";
+                this.textBox1.Text = input;
+            }
         }
-
 
         private void add_Click(object sender, EventArgs e)
         {
