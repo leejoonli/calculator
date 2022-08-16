@@ -2,6 +2,7 @@ namespace Calculator
 {
     public partial class Form1 : Form
     {
+        Queue<string> history = new Queue<string>();
         string input = string.Empty;
         string operand_one = string.Empty;
         string operand_two = string.Empty;
@@ -15,6 +16,10 @@ namespace Calculator
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -98,11 +103,13 @@ namespace Calculator
 
         private void button2_Click(object sender, EventArgs e)
         {
+            history.Clear();
             input = string.Empty;
             operand_one = string.Empty;
             operand_two = string.Empty;
             operation = ' ';
             this.textBox1.Text = input;
+            this.textBox2.Text = input;
         }
 
         private void zero_Click(object sender, EventArgs e)
@@ -234,6 +241,14 @@ namespace Calculator
                     break;
             }
 
+            history_list(result, num_one, num_two, operation);
+            this.textBox2.Text = "";
+            foreach (string queue in history)
+            {
+                this.textBox2.AppendText(queue);
+                this.textBox2.AppendText(Environment.NewLine);
+            }
+
             operand_one = result.ToString();
             operand_two = string.Empty;
             input = string.Empty;
@@ -251,6 +266,11 @@ namespace Calculator
                 input += result.ToString();
                 this.textBox1.Text = input;
             }
+        }
+        private void history_list(double result, double num_one, double num_two, char op)
+        {
+            string queue_string = $"{num_one.ToString()}{op}{num_two.ToString()}={result.ToString()}";
+            history.Enqueue(queue_string);
         }
     }
 }

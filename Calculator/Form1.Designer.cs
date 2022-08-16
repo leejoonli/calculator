@@ -46,6 +46,7 @@
             this.multiply = new System.Windows.Forms.Button();
             this.divide = new System.Windows.Forms.Button();
             this.execute = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // one
@@ -226,9 +227,19 @@
             this.execute.UseVisualStyleBackColor = true;
             this.execute.Click += new System.EventHandler(this.execute_Click);
             // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(349, 62);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(192, 140);
+            this.textBox2.TabIndex = 18;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(382, 248);
+            this.ClientSize = new System.Drawing.Size(567, 451);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.execute);
             this.Controls.Add(this.divide);
             this.Controls.Add(this.multiply);
@@ -273,5 +284,6 @@
         private Button multiply;
         private Button divide;
         private Button execute;
+        private TextBox textBox2;
     }
 }
