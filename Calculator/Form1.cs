@@ -121,6 +121,10 @@ namespace Calculator
         {
             if (!operand_one.Contains('.'))
             {
+                if(operand_one == string.Empty)
+                {
+                    operand_one += "0";
+                }
                 this.textBox1.Text = "";
                 operand_one += '.';
                 input += ".";
@@ -128,6 +132,10 @@ namespace Calculator
             }
             else if (!operand_two.Contains('.') && operation != ' ')
             {
+                if (operand_two == string.Empty)
+                {
+                    operand_two += "0";
+                }
                 this.textBox1.Text = "";
                 operand_two += '.';
                 input += ".";
