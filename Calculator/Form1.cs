@@ -238,6 +238,21 @@ namespace Calculator
             }
         }
 
+        private void square_root_Click(object sender, EventArgs e)
+        {
+            if(operand_one == string.Empty)
+            {
+                operand_one += "0";
+                operation = 's';
+                execute_Click(sender, e);
+            }
+            else
+            {
+                operation = 's';
+                execute_Click(sender, e);
+            }
+        }
+
         private void execute_Click(object sender, EventArgs e)
         {
             if (operand_one == string.Empty && operand_two == string.Empty)
@@ -270,6 +285,13 @@ namespace Calculator
             {
                 case '+':
                     result = num_one + num_two;
+                    //history_list(result, num_one, num_two, operation);
+                    //this.textBox2.Text = "";
+                    //foreach (string queue in history)
+                    //{
+                    //    this.textBox2.AppendText(queue);
+                    //    this.textBox2.AppendText(Environment.NewLine);
+                    //}
                     break;
                 case '-':
                     result = num_one - num_two;
@@ -280,10 +302,12 @@ namespace Calculator
                 case '/':
                     result = num_one / num_two;
                     break;
+                case 's':
+                    result = Math.Sqrt(num_one);
+                    break;
                 default:
                     break;
             }
-
             history_list(result, num_one, num_two, operation);
             this.textBox2.Text = "";
             foreach (string queue in history)
@@ -312,8 +336,16 @@ namespace Calculator
         }
         private void history_list(double result, double num_one, double num_two, char op)
         {
-            string queue_string = $"{num_one.ToString()}{op}{num_two.ToString()}={result.ToString()}";
-            history.Enqueue(queue_string);
+            if (operation == 's')
+            {
+                string queue_string = $"{(char)0x221A}{result}";
+                history.Enqueue(queue_string);
+            }
+            else
+            {
+                string queue_string = $"{num_one.ToString()}{op}{num_two.ToString()}={result.ToString()}";
+                history.Enqueue(queue_string);
+            }
         }
     }
 }

@@ -49,6 +49,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.divide_into_one = new System.Windows.Forms.Button();
             this.square = new System.Windows.Forms.Button();
+            this.square_root = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // one
@@ -258,9 +259,20 @@
             this.square.UseVisualStyleBackColor = true;
             this.square.Click += new System.EventHandler(this.square_Click);
             // 
+            // square_root
+            // 
+            this.square_root.Location = new System.Drawing.Point(187, 208);
+            this.square_root.Name = "square_root";
+            this.square_root.Size = new System.Drawing.Size(75, 23);
+            this.square_root.TabIndex = 21;
+            this.square_root.Text = "Sqrt";
+            this.square_root.UseVisualStyleBackColor = true;
+            this.square_root.Click += new System.EventHandler(this.square_root_Click);
+            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(493, 451);
+            this.Controls.Add(this.square_root);
             this.Controls.Add(this.square);
             this.Controls.Add(this.divide_into_one);
             this.Controls.Add(this.textBox2);
@@ -311,5 +323,6 @@
         private TextBox textBox2;
         private Button divide_into_one;
         private Button square;
+        private Button square_root;
     }
 }
