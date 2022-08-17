@@ -146,13 +146,13 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(25, 63);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(237, 23);
+            this.textBox1.Size = new System.Drawing.Size(318, 23);
             this.textBox1.TabIndex = 9;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // zero
             // 
-            this.zero.Location = new System.Drawing.Point(25, 179);
+            this.zero.Location = new System.Drawing.Point(106, 179);
             this.zero.Name = "zero";
             this.zero.Size = new System.Drawing.Size(75, 23);
             this.zero.TabIndex = 10;
@@ -172,7 +172,7 @@
             // 
             // dot
             // 
-            this.dot.Location = new System.Drawing.Point(106, 179);
+            this.dot.Location = new System.Drawing.Point(25, 179);
             this.dot.Name = "dot";
             this.dot.Size = new System.Drawing.Size(75, 23);
             this.dot.TabIndex = 12;
@@ -222,7 +222,7 @@
             // 
             // execute
             // 
-            this.execute.Location = new System.Drawing.Point(268, 62);
+            this.execute.Location = new System.Drawing.Point(268, 208);
             this.execute.Name = "execute";
             this.execute.Size = new System.Drawing.Size(75, 23);
             this.execute.TabIndex = 17;
@@ -235,7 +235,7 @@
             this.textBox2.Location = new System.Drawing.Point(349, 62);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(120, 140);
+            this.textBox2.Size = new System.Drawing.Size(120, 169);
             this.textBox2.TabIndex = 18;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
@@ -271,7 +271,7 @@
             // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(493, 451);
+            this.ClientSize = new System.Drawing.Size(493, 283);
             this.Controls.Add(this.square_root);
             this.Controls.Add(this.square);
             this.Controls.Add(this.divide_into_one);

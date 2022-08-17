@@ -331,12 +331,12 @@ namespace Calculator
         {
             if (operation == 's')
             {
-                string queue_string = $"{(char)0x221A}{result}";
+                string queue_string = $"{(char)0x221A}{num_one}={result}";
                 history.Enqueue(queue_string);
             }
             else
             {
-                string queue_string = $"{num_one.ToString()}{op}{num_two.ToString()}={result.ToString()}";
+                string queue_string = $"{num_one}{op}{num_two}={result}";
                 history.Enqueue(queue_string);
             }
         }
