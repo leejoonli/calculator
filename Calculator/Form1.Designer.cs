@@ -232,13 +232,13 @@
             this.textBox2.Location = new System.Drawing.Point(349, 62);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(192, 140);
+            this.textBox2.Size = new System.Drawing.Size(120, 140);
             this.textBox2.TabIndex = 18;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(567, 451);
+            this.ClientSize = new System.Drawing.Size(493, 451);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.execute);
             this.Controls.Add(this.divide);
