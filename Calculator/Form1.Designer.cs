@@ -50,6 +50,7 @@
             this.divide_into_one = new System.Windows.Forms.Button();
             this.square = new System.Windows.Forms.Button();
             this.square_root = new System.Windows.Forms.Button();
+            this.negative = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // one
@@ -269,9 +270,20 @@
             this.square_root.UseVisualStyleBackColor = true;
             this.square_root.Click += new System.EventHandler(this.square_root_Click);
             // 
+            // negative
+            // 
+            this.negative.Location = new System.Drawing.Point(25, 237);
+            this.negative.Name = "negative";
+            this.negative.Size = new System.Drawing.Size(75, 23);
+            this.negative.TabIndex = 22;
+            this.negative.Text = "+/-";
+            this.negative.UseVisualStyleBackColor = true;
+            this.negative.Click += new System.EventHandler(this.negative_Click);
+            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(493, 283);
+            this.Controls.Add(this.negative);
             this.Controls.Add(this.square_root);
             this.Controls.Add(this.square);
             this.Controls.Add(this.divide_into_one);
@@ -324,5 +336,6 @@
         private Button divide_into_one;
         private Button square;
         private Button square_root;
+        private Button negative;
     }
 }

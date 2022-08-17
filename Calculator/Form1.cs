@@ -253,6 +253,27 @@ namespace Calculator
             }
         }
 
+        private void negative_Click(object sender, EventArgs e)
+        {
+            if (operand_two != string.Empty && operation != ' ')
+            {
+                if(operand_two.Substring(0, 1) == "-")
+                {
+                    operand_two = operand_two.Remove(0, 1);
+                    this.textBox1.Text = "";
+                    input = input.Remove(operand_one.Length + 1, 1);
+                    this.textBox1.Text += input;
+                }
+                else
+                {
+                    operand_two = operand_two.Insert(0, "-");
+                    this.textBox1.Text = "";
+                    input = input.Insert(operand_one.Length + 1, "-");
+                    this.textBox1.Text += input;
+                }
+            }
+        }
+
         private void execute_Click(object sender, EventArgs e)
         {
             if (operand_one == string.Empty && operand_two == string.Empty)
