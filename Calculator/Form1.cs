@@ -202,6 +202,25 @@ namespace Calculator
             input += "/";
             this.textBox1.Text = input;
         }
+
+        private void divide_into_one_Click(object sender, EventArgs e)
+        {
+            if(operand_one == string.Empty)
+            {
+                operand_one += "1";
+                operand_two += "0";
+                operation = '/';
+                execute_Click(sender, e);
+            }
+            else
+            {
+                operand_two = operand_one;
+                operand_one = "1";
+                operation = '/';
+                execute_Click(sender, e);
+            }
+        }
+
         private void execute_Click(object sender, EventArgs e)
         {
             if (operand_one == string.Empty && operand_two == string.Empty)
@@ -222,8 +241,7 @@ namespace Calculator
             }
             if (operand_one != string.Empty && operation != ' ' && operand_two == string.Empty)
             {
-                string temp_operand_two = operand_one;
-                operand_two = temp_operand_two;
+                operand_two = operand_one;
             }
 
             has_executed = true;

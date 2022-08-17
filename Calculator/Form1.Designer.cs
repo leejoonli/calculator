@@ -47,6 +47,7 @@
             this.divide = new System.Windows.Forms.Button();
             this.execute = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.divide_into_one = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // one
@@ -236,9 +237,20 @@
             this.textBox2.TabIndex = 18;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
+            // divide_into_one
+            // 
+            this.divide_into_one.Location = new System.Drawing.Point(25, 208);
+            this.divide_into_one.Name = "divide_into_one";
+            this.divide_into_one.Size = new System.Drawing.Size(75, 23);
+            this.divide_into_one.TabIndex = 19;
+            this.divide_into_one.Text = "1/x";
+            this.divide_into_one.UseVisualStyleBackColor = true;
+            this.divide_into_one.Click += new System.EventHandler(this.divide_into_one_Click);
+            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(493, 451);
+            this.Controls.Add(this.divide_into_one);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.execute);
             this.Controls.Add(this.divide);
@@ -285,5 +297,6 @@
         private Button divide;
         private Button execute;
         private TextBox textBox2;
+        private Button divide_into_one;
     }
 }
