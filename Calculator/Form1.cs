@@ -221,6 +221,23 @@ namespace Calculator
             }
         }
 
+        private void square_Click(object sender, EventArgs e)
+        {
+            if(operand_one == string.Empty)
+            {
+                operand_one += "0";
+                operand_two = operand_one;
+                operation = '*';
+                execute_Click(sender, e);
+            }
+            else
+            {
+                operand_two = operand_one;
+                operation = '*';
+                execute_Click(sender, e);
+            }
+        }
+
         private void execute_Click(object sender, EventArgs e)
         {
             if (operand_one == string.Empty && operand_two == string.Empty)

@@ -48,6 +48,7 @@
             this.execute = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.divide_into_one = new System.Windows.Forms.Button();
+            this.square = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // one
@@ -247,9 +248,20 @@
             this.divide_into_one.UseVisualStyleBackColor = true;
             this.divide_into_one.Click += new System.EventHandler(this.divide_into_one_Click);
             // 
+            // square
+            // 
+            this.square.Location = new System.Drawing.Point(106, 208);
+            this.square.Name = "square";
+            this.square.Size = new System.Drawing.Size(75, 23);
+            this.square.TabIndex = 20;
+            this.square.Text = "x^2";
+            this.square.UseVisualStyleBackColor = true;
+            this.square.Click += new System.EventHandler(this.square_Click);
+            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(493, 451);
+            this.Controls.Add(this.square);
             this.Controls.Add(this.divide_into_one);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.execute);
@@ -298,5 +310,6 @@
         private Button execute;
         private TextBox textBox2;
         private Button divide_into_one;
+        private Button square;
     }
 }
