@@ -285,13 +285,6 @@ namespace Calculator
             {
                 case '+':
                     result = num_one + num_two;
-                    //history_list(result, num_one, num_two, operation);
-                    //this.textBox2.Text = "";
-                    //foreach (string queue in history)
-                    //{
-                    //    this.textBox2.AppendText(queue);
-                    //    this.textBox2.AppendText(Environment.NewLine);
-                    //}
                     break;
                 case '-':
                     result = num_one - num_two;
