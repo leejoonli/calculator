@@ -272,6 +272,23 @@ namespace Calculator
                     this.textBox1.Text += input;
                 }
             }
+            else if(operand_one != string.Empty && operation == ' ' && operand_two == string.Empty)
+            {
+                if (operand_one.Substring(0, 1) == "-")
+                {
+                    operand_one = operand_one.Remove(0, 1);
+                    this.textBox1.Text = "";
+                    input = input.Remove(0, 1);
+                    this.textBox1.Text += input;
+                }
+                else
+                {
+                    operand_one = operand_one.Insert(0, "-");
+                    this.textBox1.Text = "";
+                    input = input.Insert(0, "-");
+                    this.textBox1.Text += input;
+                }
+            }
         }
 
         private void execute_Click(object sender, EventArgs e)
