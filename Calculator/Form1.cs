@@ -160,7 +160,7 @@ namespace Calculator
                 return;
             }
         }
-        private void test(object sender)
+        private void check_operation(object sender)
         {
             Button temp = sender as Button;
             if (operation == '-')
@@ -196,7 +196,7 @@ namespace Calculator
         {
             if (operation == '-' || operation == '*' || operation == '/')
             {
-                test(sender);
+                check_operation(sender);
                 return;
             }
             if (operation != ' ' && operand_one != string.Empty)
@@ -221,7 +221,7 @@ namespace Calculator
         {
             if (operation == '+' || operation == '*' || operation == '/')
             {
-                test(sender);
+                check_operation(sender);
                 return;
             }
             if (operation != ' ' && operand_one != string.Empty)
@@ -246,7 +246,7 @@ namespace Calculator
         {
             if (operation == '-' || operation == '+' || operation == '/')
             {
-                test(sender);
+                check_operation(sender);
                 return;
             }
             if (operation != ' ' && operand_one != string.Empty)
@@ -271,7 +271,7 @@ namespace Calculator
         {
             if (operation == '-' || operation == '*' || operation == '+')
             {
-                test(sender);
+                check_operation(sender);
                 return;
             }
             if (operation != ' ' && operand_one != string.Empty)
