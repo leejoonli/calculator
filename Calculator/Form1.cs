@@ -55,7 +55,7 @@ namespace Calculator
                 this.textBox3.Text = "";
                 operand_input = string.Empty;
                 operand_two += temp.Text;
-                operand_input += temp.Text;
+                operand_input += operand_two;
                 this.textBox3.Text = operand_input;
                 return;
             }
