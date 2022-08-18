@@ -4,6 +4,7 @@ namespace Calculator
     {
         Queue<string> history = new Queue<string>();
         string input = string.Empty;
+        string operand_input = string.Empty;
         string operand_one = string.Empty;
         string operand_two = string.Empty;
         char operation = ' ';
@@ -23,7 +24,10 @@ namespace Calculator
         {
 
         }
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
 
+        }
         private void input_string(object sender)
         {
             Button temp = sender as Button;
