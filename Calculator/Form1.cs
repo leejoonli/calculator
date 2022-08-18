@@ -33,6 +33,7 @@ namespace Calculator
                 operand_two += temp.Text;
                 input += temp.Text;
                 this.textBox1.Text = input;
+                return;
             }
             else
             {
@@ -45,6 +46,7 @@ namespace Calculator
                     input += temp.Text;
                     this.textBox1.Text = input;
                     has_executed = false;
+                    return;
                 }
                 else
                 {
@@ -52,6 +54,7 @@ namespace Calculator
                     operand_one += temp.Text;
                     input += temp.Text;
                     this.textBox1.Text = input;
+                    return;
                 }
             }
         }
@@ -59,46 +62,55 @@ namespace Calculator
         private void one_Click(object sender, EventArgs e)
         {
             input_string(sender);
+            return;
         }
 
         private void two_Click(object sender, EventArgs e)
         {
             input_string(sender);
+            return;
         }
 
         private void three_Click(object sender, EventArgs e)
         {
             input_string(sender);
+            return;
         }
 
         private void four_Click(object sender, EventArgs e)
         {
             input_string(sender);
+            return;
         }
 
         private void five_Click(object sender, EventArgs e)
         {
             input_string(sender);
+            return;
         }
 
         private void six_Click(object sender, EventArgs e)
         {
             input_string(sender);
+            return;
         }
 
         private void seven_Click(object sender, EventArgs e)
         {
             input_string(sender);
+            return;
         }
 
         private void eight_Click(object sender, EventArgs e)
         {
             input_string(sender);
+            return;
         }
 
         private void nine_Click(object sender, EventArgs e)
         {
             input_string(sender);
+            return;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -110,11 +122,13 @@ namespace Calculator
             operation = ' ';
             this.textBox1.Text = input;
             this.textBox2.Text = input;
+            return;
         }
 
         private void zero_Click(object sender, EventArgs e)
         {
             input_string(sender);
+            return;
         }
 
         private void dot_Click(object sender, EventArgs e)
@@ -124,83 +138,158 @@ namespace Calculator
                 if(operand_one == string.Empty)
                 {
                     operand_one += "0";
+                    return;
                 }
                 this.textBox1.Text = "";
                 operand_one += '.';
                 input += ".";
                 this.textBox1.Text = input;
+                return;
             }
             else if (!operand_two.Contains('.') && operation != ' ')
             {
                 if (operand_two == string.Empty)
                 {
                     operand_two += "0";
+                    return;
                 }
                 this.textBox1.Text = "";
                 operand_two += '.';
                 input += ".";
                 this.textBox1.Text = input;
+                return;
             }
         }
-
+        private void test(object sender)
+        {
+            Button temp = sender as Button;
+            if (operation == '-')
+            {
+                operation = char.Parse(temp.Text);
+                this.textBox1.Text = "";
+                input = input.Replace('-', operation);
+                this.textBox1.Text = input;
+            }
+            else if (operation == '+')
+            {
+                operation = char.Parse(temp.Text);
+                this.textBox1.Text = "";
+                input = input.Replace('+', operation);
+                this.textBox1.Text = input;
+            }
+            else if (operation == '*')
+            {
+                operation = char.Parse(temp.Text);
+                this.textBox1.Text = "";
+                input = input.Replace('*', operation);
+                this.textBox1.Text = input;
+            }
+            else if(operation == '/')
+            {
+                operation = char.Parse(temp.Text);
+                this.textBox1.Text = "";
+                input = input.Replace('/', operation);
+                this.textBox1.Text = input;
+            }
+        }
         private void add_Click(object sender, EventArgs e)
         {
-            if (operation != ' ')
+            if (operation == '-' || operation == '*' || operation == '/')
+            {
+                test(sender);
+                return;
+            }
+            if (operation != ' ' && operand_one != string.Empty)
             {
                 execute_Click(sender, e);
+                return;
             }
             if (operand_one == string.Empty)
             {
                 operand_one = "0";
+                input += operand_one;
+                this.textBox1.Text = input;
+                return;
             }
             operation = '+';
             input += "+";
             this.textBox1.Text = input;
+            return;
         }
 
         private void subtract_Click(object sender, EventArgs e)
         {
-            if (operation != ' ')
+            if (operation == '+' || operation == '*' || operation == '/')
+            {
+                test(sender);
+                return;
+            }
+            if (operation != ' ' && operand_one != string.Empty)
             {
                 execute_Click(sender, e);
+                return;
             }
             if (operand_one == string.Empty)
             {
                 operand_one = "0";
+                input += operand_one;
+                this.textBox1.Text = input;
+                return;
             }
             operation = '-';
             input += "-";
             this.textBox1.Text = input;
+            return;
         }
 
         private void multiply_Click(object sender, EventArgs e)
         {
-            if (operation != ' ')
+            if (operation == '-' || operation == '+' || operation == '/')
+            {
+                test(sender);
+                return;
+            }
+            if (operation != ' ' && operand_one != string.Empty)
             {
                 execute_Click(sender, e);
+                return;
             }
             if (operand_one == string.Empty)
             {
                 operand_one = "0";
+                input += operand_one;
+                this.textBox1.Text = input;
+                return;
             }
             operation = '*';
             input += "*";
             this.textBox1.Text = input;
+            return;
         }
 
         private void divide_Click(object sender, EventArgs e)
         {
-            if (operation != ' ')
+            if (operation == '-' || operation == '*' || operation == '+')
+            {
+                test(sender);
+                return;
+            }
+            if (operation != ' ' && operand_one != string.Empty)
             {
                 execute_Click(sender, e);
+                return;
             }
             if (operand_one == string.Empty)
             {
                 operand_one = "0";
+                input += operand_one;
+                this.textBox1.Text = input;
+                return;
             }
             operation = '/';
             input += "/";
             this.textBox1.Text = input;
+            return;
         }
 
         private void divide_into_one_Click(object sender, EventArgs e)
@@ -211,6 +300,7 @@ namespace Calculator
                 operand_two += "0";
                 operation = '/';
                 execute_Click(sender, e);
+                return;
             }
             else
             {
@@ -218,6 +308,7 @@ namespace Calculator
                 operand_one = "1";
                 operation = '/';
                 execute_Click(sender, e);
+                return;
             }
         }
 
@@ -229,12 +320,14 @@ namespace Calculator
                 operand_two = operand_one;
                 operation = '*';
                 execute_Click(sender, e);
+                return;
             }
             else
             {
                 operand_two = operand_one;
                 operation = '*';
                 execute_Click(sender, e);
+                return;
             }
         }
 
@@ -245,11 +338,13 @@ namespace Calculator
                 operand_one += "0";
                 operation = 's';
                 execute_Click(sender, e);
+                return;
             }
             else
             {
                 operation = 's';
                 execute_Click(sender, e);
+                return;
             }
         }
 
@@ -263,6 +358,7 @@ namespace Calculator
                     this.textBox1.Text = "";
                     input = input.Remove(operand_one.Length + 1, 1);
                     this.textBox1.Text += input;
+                    return;
                 }
                 else
                 {
@@ -270,6 +366,7 @@ namespace Calculator
                     this.textBox1.Text = "";
                     input = input.Insert(operand_one.Length + 1, "-");
                     this.textBox1.Text += input;
+                    return;
                 }
             }
             else if(operand_one != string.Empty && operation == ' ' && operand_two == string.Empty)
@@ -280,6 +377,7 @@ namespace Calculator
                     this.textBox1.Text = "";
                     input = input.Remove(0, 1);
                     this.textBox1.Text += input;
+                    return;
                 }
                 else
                 {
@@ -287,6 +385,7 @@ namespace Calculator
                     this.textBox1.Text = "";
                     input = input.Insert(0, "-");
                     this.textBox1.Text += input;
+                    return;
                 }
             }
         }
@@ -312,6 +411,7 @@ namespace Calculator
             if (operand_one != string.Empty && operation != ' ' && operand_two == string.Empty)
             {
                 operand_two = operand_one;
+                return;
             }
 
             has_executed = true;
@@ -339,6 +439,7 @@ namespace Calculator
                 default:
                     break;
             }
+
             history_list(result, num_one, num_two, operation);
             this.textBox2.Text = "";
             foreach (string queue in history)
@@ -357,12 +458,14 @@ namespace Calculator
                 this.textBox1.Text = "";
                 input += "0";
                 this.textBox1.Text = input;
+                return;
             }
             else
             {
                 this.textBox1.Text = "";
                 input += result.ToString();
                 this.textBox1.Text = input;
+                return;
             }
         }
         private void history_list(double result, double num_one, double num_two, char op)
@@ -371,11 +474,13 @@ namespace Calculator
             {
                 string queue_string = $"{(char)0x221A}{num_one}={result}";
                 history.Enqueue(queue_string);
+                return;
             }
             else
             {
                 string queue_string = $"{num_one}{op}{num_two}={result}";
                 history.Enqueue(queue_string);
+                return;
             }
         }
     }
