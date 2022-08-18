@@ -61,10 +61,21 @@ namespace Calculator
             }
             else
             {
-                this.textBox3.Text = "";
-                operand_one += temp.Text;
-                operand_input += temp.Text;
-                this.textBox3.Text = operand_input;
+                if (operand_one.Length > 0)
+                {
+                    this.textBox3.Text = "";
+                    operand_one = string.Empty;
+                    operand_one += temp.Text;
+                    operand_input = operand_one;
+                    this.textBox3.Text = operand_input;
+                }
+                else
+                {
+                    this.textBox3.Text = "";
+                    operand_one += temp.Text;
+                    operand_input += temp.Text;
+                    this.textBox3.Text = operand_input;
+                }
             }
         }
 
@@ -517,7 +528,7 @@ namespace Calculator
             input = $"{num_one}{temp_op}{num_two}=";
             this.textBox1.Text = input;
             input = string.Empty;
-            this.textBox3.Text = result.ToString();
+            this.textBox3.Text = operand_one;
             return;
         }
         private void history_list(double result, double num_one, double num_two, char op)
