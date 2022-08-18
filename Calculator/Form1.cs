@@ -138,7 +138,6 @@ namespace Calculator
                 if(operand_one == string.Empty)
                 {
                     operand_one += "0";
-                    return;
                 }
                 this.textBox1.Text = "";
                 operand_one += '.';
@@ -151,7 +150,6 @@ namespace Calculator
                 if (operand_two == string.Empty)
                 {
                     operand_two += "0";
-                    return;
                 }
                 this.textBox1.Text = "";
                 operand_two += '.';
@@ -388,6 +386,11 @@ namespace Calculator
                     return;
                 }
             }
+        }
+
+        private void backspace_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void execute_Click(object sender, EventArgs e)

@@ -51,6 +51,7 @@
             this.square = new System.Windows.Forms.Button();
             this.square_root = new System.Windows.Forms.Button();
             this.negative = new System.Windows.Forms.Button();
+            this.backspace = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // one
@@ -183,7 +184,7 @@
             // 
             // add
             // 
-            this.add.Location = new System.Drawing.Point(268, 92);
+            this.add.Location = new System.Drawing.Point(268, 121);
             this.add.Name = "add";
             this.add.Size = new System.Drawing.Size(75, 23);
             this.add.TabIndex = 13;
@@ -193,7 +194,7 @@
             // 
             // subtract
             // 
-            this.subtract.Location = new System.Drawing.Point(268, 121);
+            this.subtract.Location = new System.Drawing.Point(268, 150);
             this.subtract.Name = "subtract";
             this.subtract.Size = new System.Drawing.Size(75, 23);
             this.subtract.TabIndex = 14;
@@ -203,7 +204,7 @@
             // 
             // multiply
             // 
-            this.multiply.Location = new System.Drawing.Point(268, 150);
+            this.multiply.Location = new System.Drawing.Point(268, 179);
             this.multiply.Name = "multiply";
             this.multiply.Size = new System.Drawing.Size(75, 23);
             this.multiply.TabIndex = 15;
@@ -213,7 +214,7 @@
             // 
             // divide
             // 
-            this.divide.Location = new System.Drawing.Point(268, 179);
+            this.divide.Location = new System.Drawing.Point(268, 208);
             this.divide.Name = "divide";
             this.divide.Size = new System.Drawing.Size(75, 23);
             this.divide.TabIndex = 16;
@@ -223,7 +224,7 @@
             // 
             // execute
             // 
-            this.execute.Location = new System.Drawing.Point(268, 208);
+            this.execute.Location = new System.Drawing.Point(268, 237);
             this.execute.Name = "execute";
             this.execute.Size = new System.Drawing.Size(75, 23);
             this.execute.TabIndex = 17;
@@ -236,7 +237,7 @@
             this.textBox2.Location = new System.Drawing.Point(349, 62);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(120, 169);
+            this.textBox2.Size = new System.Drawing.Size(120, 198);
             this.textBox2.TabIndex = 18;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
@@ -280,9 +281,20 @@
             this.negative.UseVisualStyleBackColor = true;
             this.negative.Click += new System.EventHandler(this.negative_Click);
             // 
+            // backspace
+            // 
+            this.backspace.Location = new System.Drawing.Point(268, 92);
+            this.backspace.Name = "backspace";
+            this.backspace.Size = new System.Drawing.Size(75, 23);
+            this.backspace.TabIndex = 23;
+            this.backspace.Text = "delete";
+            this.backspace.UseVisualStyleBackColor = true;
+            this.backspace.Click += new System.EventHandler(this.backspace_Click);
+            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(493, 283);
+            this.Controls.Add(this.backspace);
             this.Controls.Add(this.negative);
             this.Controls.Add(this.square_root);
             this.Controls.Add(this.square);
@@ -337,5 +349,6 @@
         private Button square;
         private Button square_root;
         private Button negative;
+        private Button backspace;
     }
 }
