@@ -221,6 +221,7 @@ namespace Calculator
                 return;
             }
             operation = '+';
+            input = string.Empty;
             input += operand_one + "+";
             this.textBox1.Text = input;
             return;
@@ -246,6 +247,7 @@ namespace Calculator
                 return;
             }
             operation = '-';
+            input = string.Empty;
             input += operand_one + "-";
             this.textBox1.Text = input;
             return;
@@ -271,6 +273,7 @@ namespace Calculator
                 return;
             }
             operation = '*';
+            input = string.Empty;
             input += operand_one +  "*";
             this.textBox1.Text = input;
             return;
@@ -296,6 +299,7 @@ namespace Calculator
                 return;
             }
             operation = '/';
+            input = string.Empty;
             input += operand_one + "/";
             this.textBox1.Text = input;
             return;
@@ -401,10 +405,14 @@ namespace Calculator
 
         private void backspace_Click(object sender, EventArgs e)
         {
-            this.textBox3.Text = "";
-            operand_one = operand_one.Remove(operand_one.Length - 1);
-            operand_input = operand_one;
-            this.textBox3.Text = operand_input;
+            if (operand_input.Length != 0)
+            {
+                this.textBox3.Text = "";
+                operand_one = operand_one.Remove(operand_one.Length - 1);
+                operand_input = operand_one;
+                this.textBox3.Text = operand_input;
+            }
+            return;
         }
 
         private void execute_Click(object sender, EventArgs e)
@@ -502,12 +510,11 @@ namespace Calculator
 
             operand_one = result.ToString();
             operand_two = string.Empty;
-            input = string.Empty;
             operation = ' ';
 
             this.textBox3.Text = "";
             this.textBox1.Text = "";
-            input += $"{num_one}{temp_op}{num_two}=";
+            input = $"{num_one}{temp_op}{num_two}=";
             this.textBox1.Text = input;
             input = string.Empty;
             this.textBox3.Text = result.ToString();
