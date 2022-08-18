@@ -55,7 +55,7 @@ namespace Calculator
                 this.textBox3.Text = "";
                 operand_input = string.Empty;
                 operand_two += temp.Text;
-                operand_input += operand_two;
+                operand_input = operand_two;
                 this.textBox3.Text = operand_input;
                 return;
             }
@@ -416,11 +416,18 @@ namespace Calculator
 
         private void backspace_Click(object sender, EventArgs e)
         {
-            if (operand_input.Length != 0)
+            if (operand_input.Length != 0 && operand_one == string.Empty)
             {
                 this.textBox3.Text = "";
                 operand_one = operand_one.Remove(operand_one.Length - 1);
                 operand_input = operand_one;
+                this.textBox3.Text = operand_input;
+            }
+            else if (operand_input.Length != 0 && operand_one != string.Empty && operation != ' ')
+            {
+                this.textBox3.Text = "";
+                operand_two = operand_two.Remove(operand_two.Length - 1);
+                operand_input = operand_two;
                 this.textBox3.Text = operand_input;
             }
             return;
