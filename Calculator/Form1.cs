@@ -30,7 +30,27 @@ namespace Calculator
         private void input_string(object sender)
         {
             Button temp = sender as Button;
-            if (operation == '+' || operation == '-' || operation == '*' || operation == '/')
+            if (this.textBox3.Text == "Cannot divide by 0")
+            {
+                operand_one = temp.Text;
+                operand_two = string.Empty;
+                operation = ' ';
+                operand_input += temp.Text;
+                input = string.Empty;
+                this.textBox1.Text = "";
+                this.textBox3.Text = operand_one;
+                this.add.Enabled = true;
+                this.subtract.Enabled = true;
+                this.multiply.Enabled = true;
+                this.divide.Enabled = true;
+                this.negative.Enabled = true;
+                this.square.Enabled = true;
+                this.square_root.Enabled = true;
+                this.dot.Enabled = true;
+                this.divide_into_one.Enabled = true;
+                return;
+            }
+            else if (operation == '+' || operation == '-' || operation == '*' || operation == '/')
             {
                 this.textBox3.Text = "";
                 operand_input = string.Empty;
