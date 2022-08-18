@@ -401,7 +401,10 @@ namespace Calculator
 
         private void backspace_Click(object sender, EventArgs e)
         {
-
+            this.textBox3.Text = "";
+            operand_one = operand_one.Remove(operand_one.Length - 1);
+            operand_input = operand_one;
+            this.textBox3.Text = operand_input;
         }
 
         private void execute_Click(object sender, EventArgs e)
@@ -502,23 +505,13 @@ namespace Calculator
             input = string.Empty;
             operation = ' ';
 
-            //if(result == 0)
-            //{
-            //    this.textBox1.Text = "";
-            //    input += "0";
-            //    this.textBox1.Text = input;
-            //    return;
-            //}
-            //else
-            //{
-                this.textBox3.Text = "";
-                this.textBox1.Text = "";
-                input += $"{num_one}{temp_op}{num_two}=";
-                this.textBox1.Text = input;
-                input = string.Empty;
-                this.textBox3.Text = result.ToString();
-                return;
-            //}
+            this.textBox3.Text = "";
+            this.textBox1.Text = "";
+            input += $"{num_one}{temp_op}{num_two}=";
+            this.textBox1.Text = input;
+            input = string.Empty;
+            this.textBox3.Text = result.ToString();
+            return;
         }
         private void history_list(double result, double num_one, double num_two, char op)
         {
