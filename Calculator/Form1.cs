@@ -9,7 +9,6 @@ namespace Calculator
         string operand_two = string.Empty;
         char operation = ' ';
         double result;
-        bool has_executed = false;
 
         public Form1()
         {
@@ -33,33 +32,19 @@ namespace Calculator
             Button temp = sender as Button;
             if (operation == '+' || operation == '-' || operation == '*' || operation == '/')
             {
-                this.textBox1.Text = "";
+                this.textBox3.Text = "";
+                operand_input = string.Empty;
                 operand_two += temp.Text;
-                input += temp.Text;
-                this.textBox1.Text = input;
+                operand_input += temp.Text;
+                this.textBox3.Text = operand_input;
                 return;
             }
             else
             {
-                if (has_executed)
-                {
-                    operand_one = string.Empty;
-                    input = string.Empty;
-                    this.textBox1.Text = "";
-                    operand_one += temp.Text;
-                    input += temp.Text;
-                    this.textBox1.Text = input;
-                    has_executed = false;
-                    return;
-                }
-                else
-                {
-                    this.textBox1.Text = "";
-                    operand_one += temp.Text;
-                    input += temp.Text;
-                    this.textBox1.Text = input;
-                    return;
-                }
+                this.textBox3.Text = "";
+                operand_one += temp.Text;
+                operand_input += temp.Text;
+                this.textBox3.Text = operand_input;
             }
         }
 
@@ -123,9 +108,11 @@ namespace Calculator
             input = string.Empty;
             operand_one = string.Empty;
             operand_two = string.Empty;
+            operand_input = string.Empty;
             operation = ' ';
             this.textBox1.Text = input;
             this.textBox2.Text = input;
+            this.textBox3.Text = input;
             return;
         }
 
@@ -214,7 +201,7 @@ namespace Calculator
                 return;
             }
             operation = '+';
-            input += "+";
+            input += operand_one + "+";
             this.textBox1.Text = input;
             return;
         }
@@ -239,7 +226,7 @@ namespace Calculator
                 return;
             }
             operation = '-';
-            input += "-";
+            input += operand_one + "-";
             this.textBox1.Text = input;
             return;
         }
@@ -264,7 +251,7 @@ namespace Calculator
                 return;
             }
             operation = '*';
-            input += "*";
+            input += operand_one +  "*";
             this.textBox1.Text = input;
             return;
         }
@@ -289,7 +276,7 @@ namespace Calculator
                 return;
             }
             operation = '/';
-            input += "/";
+            input += operand_one + "/";
             this.textBox1.Text = input;
             return;
         }
@@ -399,6 +386,26 @@ namespace Calculator
 
         private void execute_Click(object sender, EventArgs e)
         {
+            if (this.textBox3.Text == "Cannot divide by 0")
+            {
+                operand_one = string.Empty;
+                operand_two = string.Empty;
+                operation = ' ';
+                operand_input = string.Empty;
+                input = string.Empty;
+                this.textBox1.Text = "";
+                this.textBox3.Text = operand_one;
+                this.add.Enabled = true;
+                this.subtract.Enabled = true;
+                this.multiply.Enabled = true;
+                this.divide.Enabled = true;
+                this.negative.Enabled = true;
+                this.square.Enabled = true;
+                this.square_root.Enabled = true;
+                this.dot.Enabled = true;
+                this.divide_into_one.Enabled = true;
+                return;
+            }
             if (operand_one == string.Empty && operand_two == string.Empty)
             {
                 input = string.Empty;
@@ -421,10 +428,10 @@ namespace Calculator
                 return;
             }
 
-            has_executed = true;
             result = 0;
             double num_one = Convert.ToDouble(operand_one);
             double num_two = Convert.ToDouble(operand_two);
+            char temp_op = operation;
 
             switch(operation)
             {
@@ -439,6 +446,21 @@ namespace Calculator
                     break;
                 case '/':
                     result = num_one / num_two;
+                    if (num_two == 0)
+                    {
+                        this.textBox3.Text = "";
+                        this.textBox3.Text = "Cannot divide by 0";
+                        this.add.Enabled = false;
+                        this.subtract.Enabled = false;
+                        this.multiply.Enabled = false;
+                        this.divide.Enabled = false;
+                        this.negative.Enabled = false;
+                        this.square.Enabled = false;
+                        this.square_root.Enabled = false;
+                        this.dot.Enabled = false;
+                        this.divide_into_one.Enabled = false;
+                        return;
+                    }
                     break;
                 case 's':
                     result = Math.Sqrt(num_one);
@@ -460,20 +482,23 @@ namespace Calculator
             input = string.Empty;
             operation = ' ';
 
-            if(result == 0)
-            {
+            //if(result == 0)
+            //{
+            //    this.textBox1.Text = "";
+            //    input += "0";
+            //    this.textBox1.Text = input;
+            //    return;
+            //}
+            //else
+            //{
+                this.textBox3.Text = "";
                 this.textBox1.Text = "";
-                input += "0";
+                input += $"{num_one}{temp_op}{num_two}=";
                 this.textBox1.Text = input;
+                input = string.Empty;
+                this.textBox3.Text = result.ToString();
                 return;
-            }
-            else
-            {
-                this.textBox1.Text = "";
-                input += result.ToString();
-                this.textBox1.Text = input;
-                return;
-            }
+            //}
         }
         private void history_list(double result, double num_one, double num_two, char op)
         {
