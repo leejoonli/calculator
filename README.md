@@ -23,9 +23,9 @@ Currently must have Microsoft Visual Studio installed and have Git commands avai
 
 ## Current Application State
 
-![image](https://user-images.githubusercontent.com/65789692/185300016-5fd9c59d-6087-40e4-8dc5-0d5974d0e56e.png)
-![image](https://user-images.githubusercontent.com/65789692/185300029-ae8ca9b3-44ac-4f15-9235-68abc73c8e8a.png)
-![image](https://user-images.githubusercontent.com/65789692/185300043-97339b29-0c65-401a-8521-5e0cbccf17a2.png)
+![image](https://user-images.githubusercontent.com/65789692/185531734-41227605-c39f-417f-8337-e4b026423fbe.png)
+![image](https://user-images.githubusercontent.com/65789692/185531782-20f5687c-724e-47fb-a31c-163d8f1f3d03.png)
+![image](https://user-images.githubusercontent.com/65789692/185531830-bdd9e60d-9b34-45a4-b485-cb5d3cc323e1.png)
 
 ## User Stories
 
@@ -43,7 +43,6 @@ Currently must have Microsoft Visual Studio installed and have Git commands avai
 
 - There is a bug using the decimal where if you don't have a number before the decimal (ex: `.1`), then the decimal disappears in the calculation.
 - There is a bug when there is a calculation done that has decimals, there is a rounding error and will throw off any precise calculations.
-- The delete button does not work.
 
 # Contribution Guidelines
 
