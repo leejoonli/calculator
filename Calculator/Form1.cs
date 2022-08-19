@@ -17,15 +17,15 @@ namespace Calculator
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
         private void input_string(object sender)
         {
@@ -59,23 +59,19 @@ namespace Calculator
                 this.textBox3.Text = operand_input;
                 return;
             }
+            else if (operand_one == result.ToString())
+            {
+                this.textBox3.Text = "";
+                operand_one = temp.Text;
+                operand_input = operand_one;
+                this.textBox3.Text = operand_input;
+            }
             else
             {
-                if (operand_one.Length > 0)
-                {
-                    this.textBox3.Text = "";
-                    operand_one = string.Empty;
-                    operand_one += temp.Text;
-                    operand_input = operand_one;
-                    this.textBox3.Text = operand_input;
-                }
-                else
-                {
-                    this.textBox3.Text = "";
-                    operand_one += temp.Text;
-                    operand_input += temp.Text;
-                    this.textBox3.Text = operand_input;
-                }
+                this.textBox3.Text = "";
+                operand_one += temp.Text;
+                operand_input += temp.Text;
+                this.textBox3.Text = operand_input;
             }
         }
 
@@ -416,21 +412,21 @@ namespace Calculator
 
         private void backspace_Click(object sender, EventArgs e)
         {
-            if (operand_input.Length != 0 && operand_one == string.Empty)
-            {
-                this.textBox3.Text = "";
-                operand_one = operand_one.Remove(operand_one.Length - 1);
-                operand_input = operand_one;
-                this.textBox3.Text = operand_input;
-            }
-            else if (operand_input.Length != 0 && operand_one != string.Empty && operation != ' ')
-            {
-                this.textBox3.Text = "";
-                operand_two = operand_two.Remove(operand_two.Length - 1);
-                operand_input = operand_two;
-                this.textBox3.Text = operand_input;
-            }
-            return;
+            //if (operand_input.Length != 0 && operand_one == string.Empty)
+            //{
+            //    this.textBox3.Text = "";
+            //    operand_one = operand_one.Remove(operand_one.Length - 1);
+            //    operand_input = operand_one;
+            //    this.textBox3.Text = operand_input;
+            //}
+            //else if (operand_input.Length != 0 && operand_one != string.Empty && operation != ' ')
+            //{
+            //    this.textBox3.Text = "";
+            //    operand_two = operand_two.Remove(operand_two.Length - 1);
+            //    operand_input = operand_two;
+            //    this.textBox3.Text = operand_input;
+            //}
+            //return;
         }
 
         private void execute_Click(object sender, EventArgs e)
