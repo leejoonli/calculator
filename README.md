@@ -17,9 +17,11 @@ Currently must have Microsoft Visual Studio installed and have Git commands avai
     * You can either click the link which will highlight the github or https link and copy it or click on the icon next to the link which will copy it into your clipboard.
 3. Fork and clone or just clone this repository to your machine using `git clone <PASTE SSH OR HTTPS HERE>`.
 4. `cd` into the newly created directory.
-5. Open the directory using Microsoft Visual Studio.
-6. Launch the application using `Ctrl + F5`.
-    * Your commands may vary depending on your operating system.  For more information please visit `https://docs.microsoft.com/en-us/visualstudio/mac/keyboard-shortcuts?view=vsmac-2022`.
+5. Navigate to the application.
+    * The path should look similar to this: `Users\< Your User >\source\repos\< Your Directory Name >\bin\Release\net6.0-windows`.
+        > Note: This is the path to the application on a windows OS.  Your path may vary.
+    * In this directory, you should see `Calculator.exe`.
+6. Open the application.
 
 ## Current Application State
 
